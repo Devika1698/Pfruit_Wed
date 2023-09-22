@@ -25,3 +25,5 @@ Create a database in localhost/phpmyadmin: 'pfruit_wm'
 5. Run the development server:
    python manage.py runserver
 
+6.  Django admin panel : http://localhost:8000/admin/
+
