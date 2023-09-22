@@ -55,7 +55,7 @@ def download_image(request, image_id):
     image = get_object_or_404(WeddingImage, pk=image_id)
     # Create an HTTP response with the image file for download
     response = HttpResponse(image.image, content_type='image/jpeg')
-    response['Content-Disposition'] = f'attachment; filename="{image.title}.jpg"'
+    response['Content-Disposition'] = f'attachment; filename="image.jpg"'
     return response
 
 
