@@ -1,19 +1,49 @@
 /* Add this CSS to your stylesheet */
-
-.image-list {
+.image-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+}
+
+.image-row {
+    display: flex;
+    margin-top:15%;
+    margin-left:-10pc;
 }
 
 .image-item {
-    flex-basis: calc(25% - 10px); /* 4 images in a row with a 10px margin between them */
+    flex-basis: calc(25% - 20px);
     margin-bottom: 10px;
 }
 
 /* Make all images equal in width and height */
 .image-item img {
-    width: 100%;
+    width: 200px;
     height: auto;
 }
 
+.folder-container {
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.folder-row {
+    display: flex;
+    margin-top: 5%;
+}
+
+.folder-item {
+    flex-basis: calc(25% - 20px);
+    margin-bottom: 20px; /* Bottom margin for each folder item */
+    text-align: center;
+    text-decoration: none;
+}
+
+.img img {
+    width: 100%; /* Set the width of the image to 100% of the container */
+    max-width: 300px;
+    height: auto;
+}
+
+.details p {
+    margin: 0; /* Remove default margin for paragraphs */
+}
