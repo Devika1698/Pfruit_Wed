@@ -4,7 +4,8 @@ Users can browse through folders, view images, and download images if they are l
 
 ## Installation: 
 
-Install XAMPP server: 
+Install XAMPP server:
+
 Create a database in localhost/phpmyadmin: 'pfruit_wm'
 
 1. Clone the repository:
