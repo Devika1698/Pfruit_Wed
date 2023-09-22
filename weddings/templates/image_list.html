@@ -2,18 +2,23 @@
 
 {% block content %}
 
- <h1>{{ folder.name }}</h1>
-<br><br>
-    <ul>
+ <div class="image-container">
+    <div class="folder-header">
+        <h6 style="font-size: 60px;">{{ folder.name }}</h6>
+        <p><a href="{% url 'folder_list' %}" >Back to Gallery</a></p>
+    </div>
+    <br><br>
+    <div class="image-row">
         {% for image in images %}
-
+        <div class="image-item">
             <a href="{% url 'image_detail' image.id %}">
-                <img src="{{ image.image.url }}" alt="{{ image.title }}">
+                <img src="{{ image.image.url }}">
             </a>
-        {% empty %}
+            {% empty %}
             <p>No images available in this folder.</p>
+            <div>
         {% endfor %}
-    </ul>
-<br><br>
-    <p><a href="{% url 'folder_list' %}">Back to Folder List</a></p>
+    </div>
+    <br><br>
+</div>
 {% endblock %}
