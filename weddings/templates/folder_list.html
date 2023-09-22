@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Folder List</h1>
+<br>
+    <ul>
+        {% for folder in folders %}
+        {% if folder.folder_image %}
+        <a href="{% url 'image_list' folder.id %}">
+            <img src="{{ folder.folder_image.url }}" alt="{{ folder.name }}" width="300">
+        </a>
+        <h6 style="font-size: 20px;">{{ folder.name }}</h6>
+        {% else %}
+        {% endif %}
+        {% empty %}
+            <p>No folders available.</p>
+        {% endfor %}
+    </ul>
+{% endblock %}

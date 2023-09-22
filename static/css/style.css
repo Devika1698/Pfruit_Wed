@@ -1,0 +1,19 @@
+/* Add this CSS to your stylesheet */
+
+.image-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.image-item {
+    flex-basis: calc(25% - 10px); /* 4 images in a row with a 10px margin between them */
+    margin-bottom: 10px;
+}
+
+/* Make all images equal in width and height */
+.image-item img {
+    width: 100%;
+    height: auto;
+}
+

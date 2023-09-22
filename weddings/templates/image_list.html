@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+ <h1>{{ folder.name }}</h1>
+<br><br>
+    <ul>
+        {% for image in images %}
+
+            <a href="{% url 'image_detail' image.id %}">
+                <img src="{{ image.image.url }}" alt="{{ image.title }}">
+            </a>
+        {% empty %}
+            <p>No images available in this folder.</p>
+        {% endfor %}
+    </ul>
+<br><br>
+    <p><a href="{% url 'folder_list' %}">Back to Folder List</a></p>
+{% endblock %}
