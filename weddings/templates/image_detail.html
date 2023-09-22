@@ -1,15 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Image Details</h1>
-<br><br>
-    <img src="{{ image.image.url }}" alt="{{ image.title }}">
-<br><br>
-    <p>Event Type: {{ image.event_type }}</p>
-    <p>Upload Date: {{ image.upload_date }}</p>
-    {% if user.is_authenticated %}
-        <a href="{% url 'download_image' image.id %}" class="btn btn-primary">Download</a>
-    {% else %}
-        <p>Please <a href="{% url 'login' %}">login</a> to download this image.</p>
-    {% endif %}
+<div class="details-container">
+    <h1>Details</h1>
+    <br><br>
+    <div class="img">
+        <img src="{{ image.image.url }}" width="400">
+    </div>
+    <br><br>
+    <div class="details">
+        <p>Event: {{ image.event_type }}</p>
+        <p>Upload Date: {{ image.upload_date }}</p>
+        {% if user.is_authenticated %}
+            <a href="{% url 'download_image' image.id %}" class="btn btn-primary">Download</a>
+        {% else %}
+            <p>Please <a href="{% url 'login' %}" class ="btn btn-primary">Login</a> to download this image.</p>
+        {% endif %}
+    </div>
+</div>
 {% endblock %}
